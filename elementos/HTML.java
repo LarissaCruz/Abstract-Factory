@@ -1,4 +1,4 @@
-package abstractfactory;
+package elementos;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -7,15 +7,16 @@ import interfaces.Corpo;
 import interfaces.Documento;
 import interfaces.Rodape;
 
-public class Markdown implements Documento{
+public class HTML implements Documento {
 	Cabecalho cabecalho ;
 	Corpo corpo;
 	Rodape rodape;
 	
-	public Markdown(Cabecalho cabecalho, Corpo corpo, Rodape Rodape) {
+	public HTML(Cabecalho cabecalho, Corpo corpo, Rodape Rodape) {
 		this.cabecalho = cabecalho;
 		this.corpo = corpo;
 		this.rodape = Rodape;
+		
 	}
 	
 	@Override
@@ -25,18 +26,22 @@ public class Markdown implements Documento{
 	}
 	@Override
 	public String getCorpo() {
-		return corpo.getTexto() + "\n\n";
+		return "<p>" + corpo.getTexto() + "</p>";
 		
 	}
 	@Override
 	public String getCabecalho() {
-		
-		return "# " + cabecalho.getTitulo() + "\n\n" +
-		"## " + cabecalho.getEmpresa() + "\n\n";
+		return "<html><head><title>" + cabecalho.getTitulo() + "</title></head><body>\n" +
+				"<h1>" + cabecalho.getTitulo() + "</h1>\n" +
+				"<h2>" + cabecalho.getEmpresa() + "</h2>\n";
 	}
 	@Override
 	public String getRodape() {
 		DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
-		return "------------------------------\n\n" + df.format(rodape.getData()) + "\n";
+		return "<hr/>" + df.format(rodape.getData()) +
+				"</body></html>\n";
+		
 	}
+	
+	
 }

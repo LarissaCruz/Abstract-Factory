@@ -1,6 +1,6 @@
 package fabricas;
 
-import abstractfactory.Latex;
+import elementos.Latex;
 import interfaces.Cabecalho;
 import interfaces.Corpo;
 import interfaces.Documento;

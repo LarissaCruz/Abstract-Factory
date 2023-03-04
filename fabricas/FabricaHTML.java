@@ -1,9 +1,9 @@
 package fabricas;
 
-import abstractfactory.ConcretCabecalho;
-import abstractfactory.ConcretCorpo;
-import abstractfactory.ConcretRodape;
-import abstractfactory.HTML;
+import elementos.ConcretCabecalho;
+import elementos.ConcretCorpo;
+import elementos.ConcretRodape;
+import elementos.HTML;
 import interfaces.Cabecalho;
 import interfaces.Corpo;
 import interfaces.Documento;
